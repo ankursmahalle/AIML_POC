@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+<link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css"/>
+<script defer src="https://pyscript.net/latest/pyscript.js"></script>
+
+
+    <title>MCS | Heart Builder</title>
+
+</head>
+<body>
+
+    <div class="container">
+  <div class="py-5 text-center">
+
+    <h2>Medical Prediction </h2>
+    <p class="lead">Below is an example form built to predict the diabetic patient in an Organization</p>
+  </div>
+
+  <div class="row">
+  <div class="col-md-2">
+  </div>
+    <div class="col-md-8">
+      <h4 class="mb-3">Diabetes Details</h4>
+
+
+   <div id="result"></div>
+
+      <form id="predictForm" class="needs-validation" >
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label for="Pregnancies">Pregnancies</label>
+            <input type="text" class="form-control" id="Pregnancies" placeholder="" value="" required>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="Glucose">Glucose</label>
+            <input type="text" class="form-control" id="Glucose" placeholder="" value="" required>
+          </div>
+        </div>
+
+		<div class="row">
+          <div class="col-md-6 mb-3">
+            <label for="BloodPressure">BloodPressure</label>
+            <input type="text" class="form-control" id="BloodPressure" placeholder="" value="" required>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="SkinThickness">SkinThickness</label>
+            <input type="text" class="form-control" id="SkinThickness" placeholder="" value="" required>
+          </div>
+        </div>
+
+
+		<div class="row">
+          <div class="col-md-6 mb-3">
+            <label for="Insulin">Insulin</label>
+            <input type="text" class="form-control" id="Insulin" placeholder="" value="" required>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="BMI">BMI</label>
+            <input type="text" class="form-control" id="BMI" placeholder="" value="" required>
+          </div>
+        </div>
+
+		<div class="row">
+          <div class="col-md-6 mb-3">
+            <label for="DiabetesPedigreeFunction">Diabetes PedigreeFunction</label>
+            <input type="text" class="form-control" id="DiabetesPedigreeFunction" placeholder="" value="" required>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="Age">Age</label>
+            <input type="text" class="form-control" id="salary" placeholder="" value="" required>
+          </div>
+        </div>
+
+
+        <button class="btn btn-primary btn-lg btn-block" type="submit">Submit</button>
+
+        <button py-click ="show_date_time()" id="datetime">Go</button>
+        <div id="show-datetime"></div>
+        <div>
+          <py-script>
+            from datetime import datetime
+            def show_date_time():
+              now = datetime.now().strftime("%m/%d/%Y, %H:%M:%S")
+              target_div=Element("show-datetime")
+              target_div.element.innerText=f"Now its {now}"
+          </py-script>
+
+        </div>
+
+
+
+
+
+<div class="col-md-2">
+  </div>
+
+      </form>
+      <form id="getForm">
+<!--        <button class="btn btn-primary btn-lg btn-block" type="submit">GetData</button>-->
+        <button py-click ="getForm()">GetData</button>
+        <div>
+          <py-script>
+            from datetime import datetime
+            def getForm():
+
+          </py-script>
+
+        </div>
+      </form>
+
+    </div>
+  </div>
+
+  <footer class="my-5 pt-5 text-muted text-center text-small">
+    <p class="mb-1">&copy;</p>
+    <ul class="list-inline">
+      <li class="list-inline-item"><a href="#">Privacy</a></li>
+      <li class="list-inline-item"><a href="#">Terms</a></li>
+      <li class="list-inline-item"><a href="#">Support</a></li>
+    </ul>
+  </footer>
+</div>
+
+
+<!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+<script type="text/javascript">
+    $("#predictForm" ).submit(function( event ) {
+
+  // Stop form from submitting normally
+     event.preventDefault();
+
+  // Get some values from elements on the page:
+      var $form = $( this )
+      Pregnancies = $form.find("input[id='Pregnancies']" ).val()
+      Glucose = $form.find("input[id='Glucose']" ).val()
+      BloodPressure = $form.find("input[id='BloodPressure']" ).val()
+      SkinThickness = $form.find("input[id='SkinThickness']" ).val()
+      Insulin = $form.find("input[id='Insulin']" ).val()
+      BMI = $form.find("input[id='BMI']" ).val()
+      DiabetesPedigreeFunction = $form.find("input[id='DiabetesPedigreeFunction']" ).val()
+      Age = $form.find("input[id='Age']" ).val()
+
+     var settings = {
+  "url": "http://localhost:5000/prediction",
+  "method": "POST",
+  "timeout": 0,
+  "headers": {
+    "Content-Type": "application/x-www-form-urlencoded"
+  },
+  "data": {
+    "Pregnancies": Pregnancies,
+    "Glucose": Glucose,
+    "BloodPressure": BloodPressure,
+    "SkinThickness": SkinThickness,
+    "Insulin": Insulin,
+    "BMI": BMI,
+    "DiabetesPedigreeFunction": DiabetesPedigreeFunction,
+    "Age": Age
+  }
+};
+
+
+    });
+</script>
+<script>
+
+  $("#getForm" ).fetch(http://localhost:5000/predictions )
+.then(response => {
+    // Check if the request was successful
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+    // Parse the JSON response
+    return response.json();
+  })
+  .then(data => {
+    // Handle the data returned from the server
+    console.log(data);
+  })
+  .catch(error => {
+    // Handle any errors that occurred during the fetch
+    console.error('There was a problem with the fetch operation:', error);
+  });
+
+  // Stop form from submitting normally
+     event.preventDefault();
+
+  // Get some values from elements on the page:
+    // Get some values from elements on the page:
+      var1 $form = $( this )
+     // Pregnancies = $form.get("input[id='Pregnancies']" ).val()
+
+     var1 settings = {
+  "url": "http://localhost:5000/predictions",
+  "method": "GET",
+  "timeout": 0,
+  "headers": {
+    "Content-Type": "application/x-www-form-urlencoded"
+  }
+
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+  $( "#result" ).empty().append('<div class="alert alert-success" role="alert">'+response+'</div>' );
+});
+</script>
+
+
+</body>
+</html>

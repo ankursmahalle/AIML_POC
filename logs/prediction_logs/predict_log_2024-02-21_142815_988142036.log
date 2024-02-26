@@ -1,0 +1,39 @@
+2024-02-21 14:28:15,548 : INFO : Start of Prediction
+2024-02-21 14:28:15,548 : INFO : run_id:2024-02-21_142815_988142036
+2024-02-21 14:28:15,549 : INFO : Start of Preprocessing...
+2024-02-21 14:28:15,549 : INFO : Start of feature encoding...
+2024-02-21 14:28:15,559 : INFO : End of feature encoding...
+2024-02-21 14:28:15,561 : INFO : Start of Droping Columns...
+2024-02-21 14:28:15,563 : INFO : End of Droping Columns...
+2024-02-21 14:28:15,563 : INFO : Start of finding missing values...
+2024-02-21 14:28:15,564 : INFO : End of finding missing values...
+2024-02-21 14:28:15,564 : INFO : Start of building final predictset...
+2024-02-21 14:28:15,566 : INFO : End of building final predictset...
+2024-02-21 14:28:15,566 : INFO : End of Preprocessing...
+2024-02-21 14:28:15,567 : INFO : Start of Load Model
+2024-02-21 14:28:15,567 : INFO : Model File KMeans loaded
+2024-02-21 14:28:15,567 : INFO : End of Load Model
+2024-02-21 14:28:15,567 : ERROR : Unsuccessful End of Prediction
+Traceback (most recent call last):
+  File "C:\Users\MCS\PycharmProjects\MCSProject\pythonProject\apps\prediction\predict_model.py", line 68, in single_predict_from_model
+    clusters = kmeans.predict(self.X.drop(['empid'],axis=1))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\MCS\PycharmProjects\MCSProject\pythonProject\venv\Lib\site-packages\sklearn\cluster\_kmeans.py", line 1100, in predict
+    X = self._check_test_data(X)
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\MCS\PycharmProjects\MCSProject\pythonProject\venv\Lib\site-packages\sklearn\cluster\_kmeans.py", line 952, in _check_test_data
+    X = self._validate_data(
+        ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\MCS\PycharmProjects\MCSProject\pythonProject\venv\Lib\site-packages\sklearn\base.py", line 608, in _validate_data
+    self._check_feature_names(X, reset=reset)
+  File "C:\Users\MCS\PycharmProjects\MCSProject\pythonProject\venv\Lib\site-packages\sklearn\base.py", line 535, in _check_feature_names
+    raise ValueError(message)
+ValueError: The feature names should match those that were passed during fit.
+Feature names unseen at fit time:
+- Work_accident
+- average_montly_hours
+- last_evaluation
+- number_project
+- promotion_last_5years
+- ...
+

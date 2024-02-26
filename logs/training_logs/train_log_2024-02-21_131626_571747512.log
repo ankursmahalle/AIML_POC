@@ -1,0 +1,128 @@
+2024-02-21 13:16:26,335 : INFO : Start of Training
+2024-02-21 13:16:26,335 : INFO : Run_id:2024-02-21_131626_571747512
+2024-02-21 13:16:26,335 : INFO : Start of Data Load, validation and transformation
+2024-02-21 13:16:26,335 : INFO : Start of Archiving Old Rejected Files...
+2024-02-21 13:16:26,335 : INFO : End of Archiving Old Rejected Files...
+2024-02-21 13:16:26,335 : INFO : Start of Archiving Old Validated Files...
+2024-02-21 13:16:26,335 : INFO : End of Archiving Old Validated Files...
+2024-02-21 13:16:26,336 : INFO : Start of Archiving Old Processed Files...
+2024-02-21 13:16:26,336 : INFO : End of Archiving Old Processed Files...
+2024-02-21 13:16:26,336 : INFO : Start of Archiving Old Result Files...
+2024-02-21 13:16:26,336 : INFO : End of Archiving Old Result Files...
+2024-02-21 13:16:26,336 : INFO : Start of Reading values From Schema...
+2024-02-21 13:16:26,336 : INFO : End of Reading values From Schema...
+2024-02-21 13:16:26,336 : INFO : Start of Validating Column Length...
+2024-02-21 13:16:26,357 : INFO : Invalid Columns Length :: hr_employee_churn_data.csv
+2024-02-21 13:16:26,357 : INFO : End of Validating Column Length...
+2024-02-21 13:16:26,359 : INFO : Start of Validating Missing Values...
+2024-02-21 13:16:26,364 : INFO : End of Validating Missing Values...
+2024-02-21 13:16:26,364 : INFO : Start of Replacing Missing Values with NULL...
+2024-02-21 13:16:26,370 : INFO : diabetes.csv: File Transformed successfully!!
+2024-02-21 13:16:26,370 : INFO : End of Replacing Missing Values with NULL...
+2024-02-21 13:16:26,370 : INFO : Start of Creating Table...
+2024-02-21 13:16:26,371 : INFO : Opened training database successfully
+2024-02-21 13:16:26,374 : INFO : CREATE TABLE training_raw_data_t column_name
+2024-02-21 13:16:26,377 : INFO : ALTER TABLE training_raw_data_t ADD COLUMN
+2024-02-21 13:16:26,381 : INFO : ALTER TABLE training_raw_data_t ADD COLUMN
+2024-02-21 13:16:26,384 : INFO : ALTER TABLE training_raw_data_t ADD COLUMN
+2024-02-21 13:16:26,387 : INFO : ALTER TABLE training_raw_data_t ADD COLUMN
+2024-02-21 13:16:26,390 : INFO : ALTER TABLE training_raw_data_t ADD COLUMN
+2024-02-21 13:16:26,392 : INFO : ALTER TABLE training_raw_data_t ADD COLUMN
+2024-02-21 13:16:26,396 : INFO : ALTER TABLE training_raw_data_t ADD COLUMN
+2024-02-21 13:16:26,399 : INFO : ALTER TABLE training_raw_data_t ADD COLUMN
+2024-02-21 13:16:26,399 : INFO : End of Creating Table...
+2024-02-21 13:16:26,400 : INFO : Opened training database successfully
+2024-02-21 13:16:26,400 : INFO : Start of Inserting Data into Table...
+2024-02-21 13:16:29,296 : INFO : End of Inserting Data into Table...
+2024-02-21 13:16:29,296 : INFO : Start of Exporting Data into CSV...
+2024-02-21 13:16:29,297 : INFO : Opened training database successfully
+2024-02-21 13:16:29,303 : INFO : End of Exporting Data into CSV...
+2024-02-21 13:16:29,305 : INFO : Start of Moving Processed Files...
+2024-02-21 13:16:29,305 : INFO : Moved the already processed file diabetes.csv
+2024-02-21 13:16:29,306 : INFO : End of Moving Processed Files...
+2024-02-21 13:16:29,306 : INFO : End of Data Load, validation and transformation
+2024-02-21 13:16:29,306 : INFO : Start of Preprocessing...
+2024-02-21 13:16:29,306 : INFO : Start of reading dataset...
+2024-02-21 13:16:29,309 : INFO : End of reading dataset...
+2024-02-21 13:16:29,309 : INFO : Start of Droping Columns...
+2024-02-21 13:16:29,312 : ERROR : Exception raised while Droping Columns:"['empid'] not found in axis"
+Traceback (most recent call last):
+  File "C:\Users\MCS\PycharmProjects\MCSProject\pythonProject\apps\preprocess\preprocessor.py", line 74, in drop_columns
+    self.useful_data=self.data.drop(labels=self.columns, axis=1) # drop the labels specified in the columns
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\MCS\PycharmProjects\MCSProject\pythonProject\venv\Lib\site-packages\pandas\core\frame.py", line 5568, in drop
+    return super().drop(
+           ^^^^^^^^^^^^^
+  File "C:\Users\MCS\PycharmProjects\MCSProject\pythonProject\venv\Lib\site-packages\pandas\core\generic.py", line 4782, in drop
+    obj = obj._drop_axis(labels, axis, level=level, errors=errors)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\MCS\PycharmProjects\MCSProject\pythonProject\venv\Lib\site-packages\pandas\core\generic.py", line 4824, in _drop_axis
+    new_axis = axis.drop(labels, errors=errors)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\MCS\PycharmProjects\MCSProject\pythonProject\venv\Lib\site-packages\pandas\core\indexes\base.py", line 7069, in drop
+    raise KeyError(f"{labels[mask].tolist()} not found in axis")
+KeyError: "['empid'] not found in axis"
+2024-02-21 13:16:29,323 : ERROR : Unsuccessful End of Preprocessing...
+Traceback (most recent call last):
+  File "C:\Users\MCS\PycharmProjects\MCSProject\pythonProject\apps\preprocess\preprocessor.py", line 74, in drop_columns
+    self.useful_data=self.data.drop(labels=self.columns, axis=1) # drop the labels specified in the columns
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\MCS\PycharmProjects\MCSProject\pythonProject\venv\Lib\site-packages\pandas\core\frame.py", line 5568, in drop
+    return super().drop(
+           ^^^^^^^^^^^^^
+  File "C:\Users\MCS\PycharmProjects\MCSProject\pythonProject\venv\Lib\site-packages\pandas\core\generic.py", line 4782, in drop
+    obj = obj._drop_axis(labels, axis, level=level, errors=errors)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\MCS\PycharmProjects\MCSProject\pythonProject\venv\Lib\site-packages\pandas\core\generic.py", line 4824, in _drop_axis
+    new_axis = axis.drop(labels, errors=errors)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\MCS\PycharmProjects\MCSProject\pythonProject\venv\Lib\site-packages\pandas\core\indexes\base.py", line 7069, in drop
+    raise KeyError(f"{labels[mask].tolist()} not found in axis")
+KeyError: "['empid'] not found in axis"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\MCS\PycharmProjects\MCSProject\pythonProject\apps\preprocess\preprocessor.py", line 243, in preprocess_trainset
+    data=self.drop_columns(data,['empid'])
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\MCS\PycharmProjects\MCSProject\pythonProject\apps\preprocess\preprocessor.py", line 79, in drop_columns
+    raise Exception()
+Exception
+2024-02-21 13:16:29,324 : ERROR : Unsuccessful End of Training
+Traceback (most recent call last):
+  File "C:\Users\MCS\PycharmProjects\MCSProject\pythonProject\apps\preprocess\preprocessor.py", line 74, in drop_columns
+    self.useful_data=self.data.drop(labels=self.columns, axis=1) # drop the labels specified in the columns
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\MCS\PycharmProjects\MCSProject\pythonProject\venv\Lib\site-packages\pandas\core\frame.py", line 5568, in drop
+    return super().drop(
+           ^^^^^^^^^^^^^
+  File "C:\Users\MCS\PycharmProjects\MCSProject\pythonProject\venv\Lib\site-packages\pandas\core\generic.py", line 4782, in drop
+    obj = obj._drop_axis(labels, axis, level=level, errors=errors)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\MCS\PycharmProjects\MCSProject\pythonProject\venv\Lib\site-packages\pandas\core\generic.py", line 4824, in _drop_axis
+    new_axis = axis.drop(labels, errors=errors)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\MCS\PycharmProjects\MCSProject\pythonProject\venv\Lib\site-packages\pandas\core\indexes\base.py", line 7069, in drop
+    raise KeyError(f"{labels[mask].tolist()} not found in axis")
+KeyError: "['empid'] not found in axis"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\MCS\PycharmProjects\MCSProject\pythonProject\apps\preprocess\preprocessor.py", line 243, in preprocess_trainset
+    data=self.drop_columns(data,['empid'])
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\MCS\PycharmProjects\MCSProject\pythonProject\apps\preprocess\preprocessor.py", line 79, in drop_columns
+    raise Exception()
+Exception
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\MCS\PycharmProjects\MCSProject\pythonProject\apps\training\train_model.py", line 35, in training_model
+    self.X, self.y = self.preProcess.preprocess_trainset()
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\MCS\PycharmProjects\MCSProject\pythonProject\apps\preprocess\preprocessor.py", line 260, in preprocess_trainset
+    raise Exception
+Exception

@@ -1,0 +1,125 @@
+2024-02-21 14:07:10,726 : INFO : Start of Training
+2024-02-21 14:07:11,440 : INFO : Run_id:2024-02-21_140704_678249691
+2024-02-21 14:07:12,203 : INFO : Start of Data Load, validation and transformation
+2024-02-21 14:07:12,203 : INFO : Start of Archiving Old Rejected Files...
+2024-02-21 14:07:12,204 : INFO : End of Archiving Old Rejected Files...
+2024-02-21 14:07:12,204 : INFO : Start of Archiving Old Validated Files...
+2024-02-21 14:07:12,205 : INFO : End of Archiving Old Validated Files...
+2024-02-21 14:07:12,205 : INFO : Start of Archiving Old Processed Files...
+2024-02-21 14:07:12,206 : INFO : End of Archiving Old Processed Files...
+2024-02-21 14:07:12,206 : INFO : Start of Archiving Old Result Files...
+2024-02-21 14:07:12,206 : INFO : End of Archiving Old Result Files...
+2024-02-21 14:07:12,206 : INFO : Start of Reading values From Schema...
+2024-02-21 14:07:12,206 : INFO : End of Reading values From Schema...
+2024-02-21 14:07:12,206 : INFO : Start of Validating Column Length...
+2024-02-21 14:07:12,207 : INFO : End of Validating Column Length...
+2024-02-21 14:07:12,207 : INFO : Start of Validating Missing Values...
+2024-02-21 14:07:12,207 : INFO : End of Validating Missing Values...
+2024-02-21 14:07:12,207 : INFO : Start of Replacing Missing Values with NULL...
+2024-02-21 14:07:12,207 : INFO : End of Replacing Missing Values with NULL...
+2024-02-21 14:07:12,207 : INFO : Start of Creating Table...
+2024-02-21 14:07:12,210 : INFO : Opened training database successfully
+2024-02-21 14:07:12,213 : INFO : Tables created successfully
+2024-02-21 14:07:12,214 : INFO : Closed training database successfully
+2024-02-21 14:07:12,214 : INFO : End of Creating Table...
+2024-02-21 14:07:12,215 : INFO : Opened training database successfully
+2024-02-21 14:07:12,215 : INFO : Start of Inserting Data into Table...
+2024-02-21 14:07:12,215 : INFO : End of Inserting Data into Table...
+2024-02-21 14:07:12,215 : INFO : Start of Exporting Data into CSV...
+2024-02-21 14:07:12,215 : INFO : Opened training database successfully
+2024-02-21 14:07:12,220 : INFO : End of Exporting Data into CSV...
+2024-02-21 14:07:12,221 : INFO : Start of Moving Processed Files...
+2024-02-21 14:07:12,221 : INFO : End of Moving Processed Files...
+2024-02-21 14:07:12,221 : INFO : End of Data Load, validation and transformation
+2024-02-21 14:07:16,507 : INFO : Start of Preprocessing...
+2024-02-21 14:07:18,927 : INFO : Start of reading dataset...
+2024-02-21 14:07:18,940 : INFO : End of reading dataset...
+2024-02-21 14:07:21,329 : INFO : Start of feature encoding...
+2024-02-21 14:07:21,330 : INFO : End of feature encoding...
+2024-02-21 14:07:25,646 : INFO : Start of Droping Columns...
+2024-02-21 14:07:25,646 : ERROR : Exception raised while Droping Columns:"['salary'] not found in axis"
+Traceback (most recent call last):
+  File "C:\Users\MCS\PycharmProjects\MCSProject\pythonProject\apps\preprocess\preprocessor.py", line 49, in drop_columns
+    self.useful_data=self.data.drop(labels=self.columns, axis=1) # drop the labels specified in the columns
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\MCS\PycharmProjects\MCSProject\pythonProject\venv\Lib\site-packages\pandas\core\frame.py", line 5568, in drop
+    return super().drop(
+           ^^^^^^^^^^^^^
+  File "C:\Users\MCS\PycharmProjects\MCSProject\pythonProject\venv\Lib\site-packages\pandas\core\generic.py", line 4782, in drop
+    obj = obj._drop_axis(labels, axis, level=level, errors=errors)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\MCS\PycharmProjects\MCSProject\pythonProject\venv\Lib\site-packages\pandas\core\generic.py", line 4824, in _drop_axis
+    new_axis = axis.drop(labels, errors=errors)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\MCS\PycharmProjects\MCSProject\pythonProject\venv\Lib\site-packages\pandas\core\indexes\base.py", line 7069, in drop
+    raise KeyError(f"{labels[mask].tolist()} not found in axis")
+KeyError: "['salary'] not found in axis"
+2024-02-21 14:07:35,699 : ERROR : Unsuccessful End of Preprocessing...
+Traceback (most recent call last):
+  File "C:\Users\MCS\PycharmProjects\MCSProject\pythonProject\apps\preprocess\preprocessor.py", line 49, in drop_columns
+    self.useful_data=self.data.drop(labels=self.columns, axis=1) # drop the labels specified in the columns
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\MCS\PycharmProjects\MCSProject\pythonProject\venv\Lib\site-packages\pandas\core\frame.py", line 5568, in drop
+    return super().drop(
+           ^^^^^^^^^^^^^
+  File "C:\Users\MCS\PycharmProjects\MCSProject\pythonProject\venv\Lib\site-packages\pandas\core\generic.py", line 4782, in drop
+    obj = obj._drop_axis(labels, axis, level=level, errors=errors)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\MCS\PycharmProjects\MCSProject\pythonProject\venv\Lib\site-packages\pandas\core\generic.py", line 4824, in _drop_axis
+    new_axis = axis.drop(labels, errors=errors)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\MCS\PycharmProjects\MCSProject\pythonProject\venv\Lib\site-packages\pandas\core\indexes\base.py", line 7069, in drop
+    raise KeyError(f"{labels[mask].tolist()} not found in axis")
+KeyError: "['salary'] not found in axis"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\MCS\PycharmProjects\MCSProject\pythonProject\apps\preprocess\preprocessor.py", line 191, in preprocess_trainset
+    data = self.drop_columns(data, ['salary'])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\MCS\PycharmProjects\MCSProject\pythonProject\apps\preprocess\preprocessor.py", line 54, in drop_columns
+    raise Exception()
+Exception
+2024-02-21 14:08:29,462 : ERROR : Unsuccessful End of Training
+Traceback (most recent call last):
+  File "C:\Users\MCS\PycharmProjects\MCSProject\pythonProject\apps\preprocess\preprocessor.py", line 49, in drop_columns
+    self.useful_data=self.data.drop(labels=self.columns, axis=1) # drop the labels specified in the columns
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\MCS\PycharmProjects\MCSProject\pythonProject\venv\Lib\site-packages\pandas\core\frame.py", line 5568, in drop
+    return super().drop(
+           ^^^^^^^^^^^^^
+  File "C:\Users\MCS\PycharmProjects\MCSProject\pythonProject\venv\Lib\site-packages\pandas\core\generic.py", line 4782, in drop
+    obj = obj._drop_axis(labels, axis, level=level, errors=errors)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\MCS\PycharmProjects\MCSProject\pythonProject\venv\Lib\site-packages\pandas\core\generic.py", line 4824, in _drop_axis
+    new_axis = axis.drop(labels, errors=errors)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\MCS\PycharmProjects\MCSProject\pythonProject\venv\Lib\site-packages\pandas\core\indexes\base.py", line 7069, in drop
+    raise KeyError(f"{labels[mask].tolist()} not found in axis")
+KeyError: "['salary'] not found in axis"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\MCS\PycharmProjects\MCSProject\pythonProject\apps\preprocess\preprocessor.py", line 191, in preprocess_trainset
+    data = self.drop_columns(data, ['salary'])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\MCS\PycharmProjects\MCSProject\pythonProject\apps\preprocess\preprocessor.py", line 54, in drop_columns
+    raise Exception()
+Exception
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\MCS\PycharmProjects\MCSProject\pythonProject\apps\training\train_model.py", line 35, in training_model
+    self.X, self.y = self.preProcess.preprocess_trainset()
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\MCS\PycharmProjects\MCSProject\pythonProject\apps\preprocess\preprocessor.py", line 202, in preprocess_trainset
+    self.logger.exception('Unsuccessful End of Preprocessing...')
+  File "C:\Users\MCS\PycharmProjects\MCSProject\pythonProject\apps\core\logger.py", line 24, in exception
+    self.logger.exception(message)
+  File "C:\Users\MCS\AppData\Local\Programs\Python\Python312\Lib\logging\__init__.py", line 1574, in exception
+    self.error(msg, *args, exc_info=exc_info, **kwargs)
+  File "_pydevd_bundle\\pydevd_pep_669_tracing_cython.pyx", line 575, in _pydevd_bundle.pydevd_pep_669_tracing_cython.PyReturnCallback.__call__
+AttributeError: 'NetCommand' object has no attribute 'stop_monitoring'

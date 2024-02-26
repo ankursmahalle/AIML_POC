@@ -1,0 +1,87 @@
+2024-02-23 11:54:02,767 : INFO : Start of Prediction
+2024-02-23 11:54:02,768 : INFO : run_id:2024-02-23_115345_671372311
+2024-02-23 11:54:02,768 : INFO : Start of Preprocessing...
+2024-02-23 11:54:02,769 : INFO : Start of feature encoding...
+2024-02-23 11:54:02,770 : INFO : End of feature encoding...
+2024-02-23 11:54:02,772 : INFO : Start of Droping Columns...
+2024-02-23 11:54:02,773 : ERROR : Exception raised while Droping Columns:"['salary'] not found in axis"
+Traceback (most recent call last):
+  File "C:\Users\MCS\PycharmProjects\MCSProject\pythonProject\apps\preprocess\preprocessor.py", line 56, in drop_columns
+    self.useful_data=self.data.drop(labels=self.columns, axis=1) # drop the labels specified in the columns
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\MCS\PycharmProjects\MCSProject\pythonProject\venv\Lib\site-packages\pandas\core\frame.py", line 5568, in drop
+    return super().drop(
+           ^^^^^^^^^^^^^
+  File "C:\Users\MCS\PycharmProjects\MCSProject\pythonProject\venv\Lib\site-packages\pandas\core\generic.py", line 4782, in drop
+    obj = obj._drop_axis(labels, axis, level=level, errors=errors)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\MCS\PycharmProjects\MCSProject\pythonProject\venv\Lib\site-packages\pandas\core\generic.py", line 4824, in _drop_axis
+    new_axis = axis.drop(labels, errors=errors)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\MCS\PycharmProjects\MCSProject\pythonProject\venv\Lib\site-packages\pandas\core\indexes\base.py", line 7069, in drop
+    raise KeyError(f"{labels[mask].tolist()} not found in axis")
+KeyError: "['salary'] not found in axis"
+2024-02-23 11:54:02,789 : ERROR : Unsuccessful End of Preprocessing...
+Traceback (most recent call last):
+  File "C:\Users\MCS\PycharmProjects\MCSProject\pythonProject\apps\preprocess\preprocessor.py", line 56, in drop_columns
+    self.useful_data=self.data.drop(labels=self.columns, axis=1) # drop the labels specified in the columns
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\MCS\PycharmProjects\MCSProject\pythonProject\venv\Lib\site-packages\pandas\core\frame.py", line 5568, in drop
+    return super().drop(
+           ^^^^^^^^^^^^^
+  File "C:\Users\MCS\PycharmProjects\MCSProject\pythonProject\venv\Lib\site-packages\pandas\core\generic.py", line 4782, in drop
+    obj = obj._drop_axis(labels, axis, level=level, errors=errors)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\MCS\PycharmProjects\MCSProject\pythonProject\venv\Lib\site-packages\pandas\core\generic.py", line 4824, in _drop_axis
+    new_axis = axis.drop(labels, errors=errors)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\MCS\PycharmProjects\MCSProject\pythonProject\venv\Lib\site-packages\pandas\core\indexes\base.py", line 7069, in drop
+    raise KeyError(f"{labels[mask].tolist()} not found in axis")
+KeyError: "['salary'] not found in axis"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\MCS\PycharmProjects\MCSProject\pythonProject\apps\preprocess\preprocessor.py", line 256, in preprocess_predict
+    data = self.drop_columns(data, ['salary'])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\MCS\PycharmProjects\MCSProject\pythonProject\apps\preprocess\preprocessor.py", line 61, in drop_columns
+    raise Exception()
+Exception
+2024-02-23 11:54:02,791 : ERROR : Unsuccessful End of Prediction
+Traceback (most recent call last):
+  File "C:\Users\MCS\PycharmProjects\MCSProject\pythonProject\apps\preprocess\preprocessor.py", line 56, in drop_columns
+    self.useful_data=self.data.drop(labels=self.columns, axis=1) # drop the labels specified in the columns
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\MCS\PycharmProjects\MCSProject\pythonProject\venv\Lib\site-packages\pandas\core\frame.py", line 5568, in drop
+    return super().drop(
+           ^^^^^^^^^^^^^
+  File "C:\Users\MCS\PycharmProjects\MCSProject\pythonProject\venv\Lib\site-packages\pandas\core\generic.py", line 4782, in drop
+    obj = obj._drop_axis(labels, axis, level=level, errors=errors)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\MCS\PycharmProjects\MCSProject\pythonProject\venv\Lib\site-packages\pandas\core\generic.py", line 4824, in _drop_axis
+    new_axis = axis.drop(labels, errors=errors)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\MCS\PycharmProjects\MCSProject\pythonProject\venv\Lib\site-packages\pandas\core\indexes\base.py", line 7069, in drop
+    raise KeyError(f"{labels[mask].tolist()} not found in axis")
+KeyError: "['salary'] not found in axis"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\MCS\PycharmProjects\MCSProject\pythonProject\apps\preprocess\preprocessor.py", line 256, in preprocess_predict
+    data = self.drop_columns(data, ['salary'])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\MCS\PycharmProjects\MCSProject\pythonProject\apps\preprocess\preprocessor.py", line 61, in drop_columns
+    raise Exception()
+Exception
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\MCS\PycharmProjects\MCSProject\pythonProject\apps\prediction\predict_model.py", line 64, in single_predict_from_model
+    self.X = self.preProcess.preprocess_predict(data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\MCS\PycharmProjects\MCSProject\pythonProject\apps\preprocess\preprocessor.py", line 268, in preprocess_predict
+    raise Exception
+Exception

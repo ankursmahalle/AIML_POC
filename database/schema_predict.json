@@ -1,0 +1,12 @@
+{	"NumberofColumns" : 8,
+	"ColName": {
+      "Pregnancies" : "INTEGER",
+      "Glucose" : "INTEGER",
+      "BloodPressure" : "INTEGER",
+      "SkinThickness" : "INTEGER",
+      "Insulin" : "INTEGER",
+      "BMI" : "FLOAT",
+      "DiabetesPedigreeFunction" : "FLOAT",
+      "Age" : "INTEGER"
+	}
+}
